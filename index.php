@@ -6,19 +6,9 @@
     <title>Лаб4.2</title>
 </head>
 <body>
-<div class="header">
-    <img src=files/littlecomp.gif alt="emblem">
-    <span id="giga">Giga</span><span id="space">Space</span><br>
-    We provide the power for your computer system
-    <div class="login">
-        <form action="#">
-            <input type="text" value="Логин"><br>
-            <input type="password" value="1234567890"><br>
-            <button>Вход</button>
-            <a href="#">Регистрация</a>
-        </form>
-    </div>
-</div>
+<?php
+require_once "blocks/header.php";
+?>
 <div class="menu">
     <table width="100%">
         <tr>

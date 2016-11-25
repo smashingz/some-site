@@ -4,12 +4,10 @@ body {
 }
 
 .header {
-    background-color: #2f2f2f;
-    background-image: linear-gradient(to bottom, #2f2f2f, #000);
+    background: #2f2f2f linear-gradient(to bottom, #2f2f2f, #000);
     color: #545454;
     font: bold italic 16px Arial;
-    padding: 20px;
-    padding-left: 100px;
+    padding: 20px 20px 20px 100px;
     position: relative;
 }
 
@@ -24,8 +22,7 @@ body {
 }
 
 .menu table {
-    background-color: #fd9b00;
-    background-image: linear-gradient(to bottom, #f8bb49, #f7941d);
+    background: #fd9b00 linear-gradient(to bottom, #f8bb49, #f7941d);
 }
 
 .menu td {
@@ -40,8 +37,7 @@ body {
 }
 
 .menu td:hover {
-    background-color: #2f2f2f;
-    background-image: linear-gradient(to bottom, #2f2f2f, #000);
+    background: #2f2f2f linear-gradient(to bottom, #2f2f2f, #000);
     border-radius: 10px;
 }
 
@@ -96,10 +92,8 @@ body {
 
 .search h1 {
     margin: 0;
-    padding: 5px;
-    padding-left: 50px;
-    background-color: #333333;
-    background-image: linear-gradient(to bottom, #3f4246, #000);
+    padding: 5px 5px 5px 50px;
+    background: #333333 linear-gradient(to bottom, #3f4246, #000);
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
     color: #fd9b00;
