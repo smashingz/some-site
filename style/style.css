@@ -156,11 +156,7 @@ body {
     font-style: italic;
 }
 
-.info {
-    margin-left: 32%;
-    width: 68%;
-}
-
+/*
 .tovar {
     border-spacing: 0;
 }
@@ -206,7 +202,7 @@ body {
     float: right;
     font-weight: bold;
 }
-
+*/
 .bottom {
     border-top: 3px solid #cccccc;
     font: bold 11px Arial;

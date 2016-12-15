@@ -1,12 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: aronax
- * Date: 25.11.16
- * Time: 23:05
- */
-print
-    '<div class="header">
+    <div class="header">
     <img src=files/littlecomp.gif alt="emblem">
     <span id="giga">Giga</span><span id="space">Space</span><br>
 We provide the power for your computer system
@@ -18,5 +10,17 @@ We provide the power for your computer system
             <a href="#">Регистрация</a>
         </form>
     </div>
-</div>'
-?>
+</div>
+<div class="menu">
+    <table width="100%">
+        <tr>
+            <td><a href="index.php">Главная</a></td>
+            <td><a href="hard.php">Аппаратное<br>обеспечение</a></td>
+            <td><a href="#">Программное<br>обеспечение</a></td>
+            <td><a href="#">Игры</a></td>
+            <td><a href="#">Компьютеры</a></td>
+            <td><a href="#">Сервера\сеть</a></td>
+            <td><a href="contacts.php">Контакты</a></td>
+        </tr>
+    </table>
+</div>
