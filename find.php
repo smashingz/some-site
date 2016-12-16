@@ -6,13 +6,17 @@
     <title>Магазин | Аппаратное обеспечение</title>
 </head>
 <body>
-<?php
-require_once "blocks/header.php"
-?>
-<?php
-@include_once "lib/func.php";
-showAllArticles();
-?>
+<?php require_once "blocks/header.php"; ?>
+<div class="main">
+    <?php
+    //    require_once "blocks/search.php";
+    //    require_once "blocks/categories.php";
+    //    ?>
+    <?php
+    include_once "lib/func.php";
+    showAllArticles();
+    ?>
+</div>
 <?php
 require_once "blocks/bottom.php"
 ?>

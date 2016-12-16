@@ -18,11 +18,11 @@ function closeDB()
     $mysqli->close();
 }
 
-function getAllArticles()
+function getAllArticles($table)
 {
     global $mysqli;
     connectDB();
-    $result = $mysqli->query("SELECT * FROM `tov`");
+    $result = $mysqli->query("SELECT * FROM `$table`");
     closeDB();
     return toArray($result);
 }
@@ -37,13 +37,38 @@ function toArray($rez)
 
 function showAllArticles()
 {
-    $articles = getAllArticles();
-    for ($i = 0; $i < count($articles); $i++){
+    $articles = getAllArticles("tov");
+    for ($i = 0; $i < count($articles); $i++) {
         $title = $articles[$i]["name"];
-        $img=$articles[$i]["image"];
-        $descr=$articles[$i]["fulldescription"];
-        $price=$articles[$i]["price"];
+        $img = $articles[$i]["image"];
+        $descr = $articles[$i]["description"];
+        $price = $articles[$i]["price"];
         include "blocks/list_article.php";
+    }
+}
+
+function showBanners()
+{
+    echo
+    "<table align='center'
+    <tr>";
+    $br = getAllArticles("banners");
+    echo "<br>";
+    for ($i = 0; $i < count($br); $i++) {
+        echo "<td><img src='files/" . $br[$i]["adress"] . "' width='200' height='50'</td>";
+    }
+    echo
+    "</tr>
+    </table>";
+}
+
+function showComments()
+{
+    $comm = getAllArticles("comments");
+    for($i=0;$i<count($comm);$i++){
+        $n=$comm[$i]["name"];
+        $c=$comm[$i]["comment"];
+        include "blocks/comment.php";
     }
 }
 
