@@ -24,7 +24,6 @@
     </form>
     <?php
     if (!empty($_POST["comment"])) {
-        print_r($_POST);
         $name = htmlspecialchars($_POST["name"]);
         $comment = htmlspecialchars($_POST["comment"]);
         include_once "lib/func.php";
@@ -34,6 +33,7 @@
         else
             $mysqli->query("INSERT INTO `comments` (`name`,`comment`) VALUES ('$name','$comment')");
         closeDB();
+        header("Location: contacts.php");
     }
     ?>
 </div>

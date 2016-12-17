@@ -156,60 +156,53 @@ body {
     font-style: italic;
 }
 
-/*
-.tovar {
-    border-spacing: 0;
-}
+.offer {
+    position: relative;
+    left:33%;
+    margin-right: 33%;
 
-.headtov {
+}
+.offer h1 {
     background-color: #f7941d;
+    background: #fd9b00 linear-gradient(to bottom, #f8bb49, #f7941d);
     border: 1px solid #d88119;
+    color:white;
+    font: bold 24px Arial;
+    margin:0 0 3px 0;
+    padding-left: 3px;
 }
-
-.headtov h1 {
-    color: white;
-    text-align: left;
-    margin: 3px;
-    font: bold 14px Arial;
-}
-
-.imgtov {
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-}
-
-.imgtov img {
-    height: 100px;
-    display: block;
+.offer img {
+    height: 200px;
     margin: 0 auto;
+    display: block;
 }
-
-.tovopis {
+.offer .descr {
     background-color: #f7941d;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
-}
-
-.tovopis p {
     font: bold 11px Arial;
     color: #a16013;
     padding: 5px;
 }
-
-.cost {
-    margin: 10px;
+.offer .price {
+    margin: auto 10px auto auto;
     color: white;
     float: right;
     font-weight: bold;
+    font-size: 18px;
 }
-*/
+.comment h1 {
+    text-decoration: underline;
+    font-size:16px;
+}
+.comment p {
+
+}
+fieldset {
+    width:40%;
+}
 .bottom {
     border-top: 3px solid #cccccc;
     font: bold 11px Arial;
-    color: #8d8d8d;
-}
-
-.bottom a {
-    font-style: italic;
     color: #8d8d8d;
 }

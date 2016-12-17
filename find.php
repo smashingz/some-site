@@ -9,10 +9,8 @@
 <?php require_once "blocks/header.php"; ?>
 <div class="main">
     <?php
-    //    require_once "blocks/search.php";
-    //    require_once "blocks/categories.php";
-    //    ?>
-    <?php
+    require_once "blocks/search.php";
+    require_once "blocks/categories.php";
     include_once "lib/func.php";
     showAllArticles();
     ?>
