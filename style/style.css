@@ -195,11 +195,12 @@ body {
     text-decoration: underline;
     font-size:16px;
 }
-.comment p {
-
-}
 fieldset {
     width:40%;
+}
+.reg {
+    margin: 3px 25%;
+    width:100%;
 }
 .bottom {
     border-top: 3px solid #cccccc;

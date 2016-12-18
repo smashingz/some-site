@@ -1,3 +1,17 @@
+<?php
+if (!empty($_POST["comment"])) {
+    $name = htmlspecialchars($_POST["name"]);
+    $comment = htmlspecialchars($_POST["comment"]);
+    include_once "lib/func.php";
+    connectDB();
+    if (!$name)
+        $mysqli->query("INSERT INTO `comments` (`comment`) VALUES ('$comment')");
+    else
+        $mysqli->query("INSERT INTO `comments` (`name`,`comment`) VALUES ('$name','$comment')");
+    closeDB();
+    header("Location: contacts.php");
+}
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -22,20 +36,6 @@
             <input type="submit" value="Добавить" name="add_comment">
         </fieldset>
     </form>
-    <?php
-    if (!empty($_POST["comment"])) {
-        $name = htmlspecialchars($_POST["name"]);
-        $comment = htmlspecialchars($_POST["comment"]);
-        include_once "lib/func.php";
-        connectDB();
-        if (!$name)
-            $mysqli->query("INSERT INTO `comments` (`comment`) VALUES ('$comment')");
-        else
-            $mysqli->query("INSERT INTO `comments` (`name`,`comment`) VALUES ('$name','$comment')");
-        closeDB();
-        header("Location: contacts.php");
-    }
-    ?>
 </div>
 <?php include_once "blocks/bottom.php" ?>
 </body>

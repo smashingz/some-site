@@ -7,7 +7,7 @@ We provide the power for your computer system
             <input type="text" value="Логин"><br>
             <input type="password" value="1234567890"><br>
             <button>Вход</button>
-            <a href="#">Регистрация</a>
+            <a href="reg.php">Регистрация</a>
         </form>
     </div>
 </div>

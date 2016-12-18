@@ -71,5 +71,4 @@ function showComments()
         include "blocks/comment.php";
     }
 }
-
 ?>
