@@ -55,7 +55,7 @@ function showBanners()
     $br = getAllArticles("banners");
     echo "<br>";
     for ($i = 0; $i < count($br); $i++) {
-        echo "<td><img src='files/" . $br[$i]["adress"] . "' width='200' height='50'</td>";
+        echo "<td><a href=" . $br[$i]["redirect"] . "><img src=" . $br[$i]["adress"] . " width='75' height='25'></a></td>";
     }
     echo
     "</tr>
@@ -65,10 +65,22 @@ function showBanners()
 function showComments()
 {
     $comm = getAllArticles("comments");
-    for($i=0;$i<count($comm);$i++){
-        $n=$comm[$i]["name"];
-        $c=$comm[$i]["comment"];
+    for ($i = 0; $i < count($comm); $i++) {
+        $n = $comm[$i]["name"];
+        $c = $comm[$i]["comment"];
         include "blocks/comment.php";
     }
 }
+
+function check_user($login, $password)
+{
+    include_once "func.php";
+    global $mysqli;
+    connectDB();
+    $rez = $mysqli->query("SELECT * FROM `users` WHERE `login`='$login' AND `password`='$password'");
+    closeDB();
+    if ($rez->fetch_assoc()) return true;
+    else return false;
+}
+
 ?>

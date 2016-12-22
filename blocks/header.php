@@ -1,15 +1,14 @@
-    <div class="header">
+<div class="header">
     <img src=files/littlecomp.gif alt="emblem">
     <span id="giga">Giga</span><span id="space">Space</span><br>
-We provide the power for your computer system
-<div class="login">
-        <form action="#">
-            <input type="text" value="Логин"><br>
-            <input type="password" value="1234567890"><br>
-            <button>Вход</button>
-            <a href="reg.php">Регистрация</a>
-        </form>
-    </div>
+    We provide the power for your computer system
+    <?php
+    include_once "lib/func.php";
+    if (!check_user($_SESSION["login"], $_SESSION["password"]))
+        include_once "blocks/auth_form.php";
+    else
+        include_once "blocks/user_form.php";
+    ?>
 </div>
 <div class="menu">
     <table width="100%">

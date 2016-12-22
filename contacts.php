@@ -1,3 +1,4 @@
+<?php session_start()?>
 <?php
 if (!empty($_POST["comment"])) {
     $name = htmlspecialchars($_POST["name"]);
