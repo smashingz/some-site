@@ -27,16 +27,13 @@ if (!empty($_POST["comment"])) {
     include_once "lib/func.php";
     showComments();
     ?>
-    <form action="" method="post">
-        <fieldset>
-            <legend>Добавить комментарий</legend>
-            Имя:<br>
-            <input type="text" name="name"><br>
-            Комментарий: <br>
-            <textarea cols="30" rows="5" name="comment"></textarea><br>
-            <input type="submit" value="Добавить" name="add_comment">
-        </fieldset>
-    </form>
+
+    <?php
+    if ($_SESSION["login"])
+        include_once "blocks/guestbook.php";
+    else
+        echo "Извините, комментарии только для зарегистрированных пользователей";
+    ?>
 </div>
 <?php include_once "blocks/bottom.php" ?>
 </body>

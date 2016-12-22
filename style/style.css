@@ -207,3 +207,11 @@ fieldset {
     font: bold 11px Arial;
     color: #8d8d8d;
 }
+.logged {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font: bold 14px Arial;
+    color:#f7941d;
+    text-align: right;
+}

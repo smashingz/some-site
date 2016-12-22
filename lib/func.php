@@ -65,11 +65,14 @@ function showBanners()
 function showComments()
 {
     $comm = getAllArticles("comments");
-    for ($i = 0; $i < count($comm); $i++) {
-        $n = $comm[$i]["name"];
-        $c = $comm[$i]["comment"];
-        include "blocks/comment.php";
-    }
+    if (!count($comm))
+        echo "Комментариев нет<br>";
+    else
+        for ($i = 0; $i < count($comm); $i++) {
+            $n = $comm[$i]["name"];
+            $c = $comm[$i]["comment"];
+            include "blocks/comment.php";
+        }
 }
 
 function check_user($login, $password)
