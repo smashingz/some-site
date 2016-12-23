@@ -18,7 +18,7 @@ if (!empty($_POST["button_reg"])) {
 }
 function addUser($login, $password)
 {
-    include_once "lib/func.php";
+    include_once "lib/auth.php";
     global $mysqli;
     connectDB();
     $success = $mysqli->query("INSERT INTO `users` (`login`,`password`) VALUES ('$login','$password')");

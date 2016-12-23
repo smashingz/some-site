@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
-    <title>Магазин | Аппаратное обеспечение</title>
+    <title>Магазин</title>
 </head>
 <body>
 <?php require_once "blocks/header.php"; ?>
@@ -14,10 +14,10 @@
     include_once "lib/func.php";
     if ($_GET["title"])
         showFullArticle($_GET["title"]);
-    else if ($_GET["type"]) showAllArticles($_GET["type"]);
-    else if ($_GET["find"] && $_GET["find"] != "Поиск...") {
+    else if ($_GET["find"] && $_GET["find"] != "Поиск...")
         findByName($_GET["find"]);
-    } else if ($_GET["brand"])
+    else if ($_GET["type"]) showAllArticles($_GET["type"]);
+    else if ($_GET["brand"])
         findVendors($_GET["brand"]);
     ?>
 </div>

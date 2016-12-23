@@ -57,14 +57,16 @@ function showAllArticles($type)
         include "blocks/list_article.php";
     }
 }
-function showFullArticle($name) {
+
+function showFullArticle($name)
+{
     include_once "func.php";
     global $mysqli;
     connectDB();
-    mysqli_set_charset($mysqli,"utf8");
-    $articles=$mysqli->query("SELECT * FROM `tov` WHERE `name`='$name'");
+    mysqli_set_charset($mysqli, "utf8");
+    $articles = $mysqli->query("SELECT * FROM `tov` WHERE `name`='$name'");
     closeDB();
-    $articles=toArray($articles);
+    $articles = toArray($articles);
     $title = $articles[0]["name"];
     $img = $articles[0]["image"];
     $descr = $articles[0]["fulldescription"];
@@ -73,6 +75,7 @@ function showFullArticle($name) {
 
 
 }
+
 function showBanners()
 {
     echo
@@ -124,11 +127,6 @@ function check_user($login, $password)
     closeDB();
     if ($rez->fetch_assoc()) return true;
     else return false;
-}
-
-function findDescription($vendor)
-{
-    $v = getAllArticles("tov");
 }
 
 function findVendors($vendor)

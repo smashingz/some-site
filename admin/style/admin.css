@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-decoration: underline;
+    font: italic bold 24px Arial;
+    color: #f7941d;
+}
+
+.auth {
+    margin: 3px auto;
+    width: 33%;
+    text-align: center;
+}
+
+form * {
+    padding: 3px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    font: 11px Arial;
+    border: 1px solid white;
+}
+thead td{
+    font-weight:bold;
+    text-align: center;
+}
