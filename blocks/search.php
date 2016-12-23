@@ -1,25 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: aronax
- * Date: 09.12.16
- * Time: 14:49
- */
-?>
 <div class="search">
-        <img src="files/search.jpg" alt="">
-        <h1>Поиск</h1>
-        <form action="#">
-            <select name="brand">
-                <option value="">Фирма1</option>
-                <option value="">Фирма2</option>
-                <option value="">Фирма3</option>
-            </select><br>
-            <select name="product">
-                <option value="">Продукт1</option>
-                <option value="">Продукт2</option>
-                <option value="">Продукт3</option>
-            </select><br>
-            <button>Поиск</button>
-        </form>
-    </div>
+    <img src="files/search.jpg" alt="">
+    <h1>Поиск</h1>
+    <form action="find.php" method="get">
+        <input type="text" name="find" value="Поиск..." onfocus="this.value=this.value=='Поиск...'?'':this.value"
+               onblur="this.value=this.value==''?'Поиск...':this.value">
+        <select name="brand">
+            <?php
+            if($_GET["type"])$_SESSION["type"]=$_GET["type"];
+                showVendors($_SESSION["type"]);
+            ?>
+        </select>
+        <br>
+        <input type="submit" value="Поиск">
+    </form>
+</div>

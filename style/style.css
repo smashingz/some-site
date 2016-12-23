@@ -80,14 +80,12 @@ body {
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
     width: 30%;
-    height: 200px;
-    margin-right: 5px;
 }
 
-.search select {
+.search select, .search input{
     padding: 10px;
-    width: 90%;
-    margin: 10px;
+    width: 80%;
+    margin: 8px;
 }
 
 .search h1 {
@@ -106,13 +104,14 @@ body {
     left: 10px;
 }
 
-.search button {
-    margin: auto auto 10px 10px;
+.search input[type="submit"] {
+    width:30%;
     padding: 10px;
     border: 3px solid #d88119;
     background-image: linear-gradient(to top, #d88119, #f7941d);
     color: #fff;
     font: bold 14px Arial;
+
 }
 
 .search span {
@@ -173,7 +172,7 @@ body {
 }
 .offer img {
     height: 200px;
-    margin: 0 auto;
+    margin: 5px auto;
     display: block;
 }
 .offer .descr {
@@ -183,6 +182,10 @@ body {
     font: bold 11px Arial;
     color: #a16013;
     padding: 5px;
+    margin: 5px 0;
+}
+.offer .descr p {
+    margin: 0;
 }
 .offer .price {
     margin: auto 10px auto auto;
@@ -211,7 +214,10 @@ fieldset {
     position: absolute;
     right: 10px;
     top: 10px;
-    font: bold 14px Arial;
+    font: italic bold 14px Arial;
     color:#f7941d;
     text-align: right;
+}
+.logged * {
+    margin:3px;
 }

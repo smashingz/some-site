@@ -22,7 +22,18 @@ function getAllArticles($table)
 {
     global $mysqli;
     connectDB();
+    mysqli_set_charset($mysqli, "utf8");
     $result = $mysqli->query("SELECT * FROM `$table`");
+    closeDB();
+    return toArray($result);
+}
+
+function findArticles($type)
+{
+    global $mysqli;
+    connectDB();
+    mysqli_set_charset($mysqli, "utf8");
+    $result = $mysqli->query("SELECT * FROM `tov` WHERE `type`='$type'");
     closeDB();
     return toArray($result);
 }
@@ -35,9 +46,9 @@ function toArray($rez)
     return $array;
 }
 
-function showAllArticles()
+function showAllArticles($type)
 {
-    $articles = getAllArticles("tov");
+    $articles = findArticles($type);
     for ($i = 0; $i < count($articles); $i++) {
         $title = $articles[$i]["name"];
         $img = $articles[$i]["image"];
@@ -46,7 +57,22 @@ function showAllArticles()
         include "blocks/list_article.php";
     }
 }
+function showFullArticle($name) {
+    include_once "func.php";
+    global $mysqli;
+    connectDB();
+    mysqli_set_charset($mysqli,"utf8");
+    $articles=$mysqli->query("SELECT * FROM `tov` WHERE `name`='$name'");
+    closeDB();
+    $articles=toArray($articles);
+    $title = $articles[0]["name"];
+    $img = $articles[0]["image"];
+    $descr = $articles[0]["fulldescription"];
+    $price = $articles[0]["price"];
+    include "blocks/list_article.php";
 
+
+}
 function showBanners()
 {
     echo
@@ -75,6 +101,20 @@ function showComments()
         }
 }
 
+function showVendors($type)
+{
+    include_once "func.php";
+    global $mysqli;
+    connectDB();
+    $vend = $mysqli->query("SELECT `vendor` FROM `tov` WHERE `type`='$type'");
+    closeDB();
+    $vend = toArray($vend);
+    for ($i = 0; $i < count($vend); $i++) {
+        $a = $vend[$i]["vendor"];
+        print("<option>" . $a . "</option >");
+    }
+}
+
 function check_user($login, $password)
 {
     include_once "func.php";
@@ -84,6 +124,43 @@ function check_user($login, $password)
     closeDB();
     if ($rez->fetch_assoc()) return true;
     else return false;
+}
+
+function findDescription($vendor)
+{
+    $v = getAllArticles("tov");
+}
+
+function findVendors($vendor)
+{
+    include_once "func.php";
+    global $mysqli;
+    connectDB();
+    mysqli_set_charset($mysqli, "utf8");
+    $rez = $mysqli->query("SELECT * FROM `tov` WHERE `vendor`='$vendor'");
+    closeDB();
+    $rez = toArray($rez);
+    for ($i = 0; $i < count($rez); $i++) {
+        $title = $rez[$i]["name"];
+        $img = $rez[$i]["image"];
+        $descr = $rez[$i]["description"];
+        $price = $rez[$i]["price"];
+        include "blocks/list_article.php";
+    }
+}
+
+function findByName($name)
+{
+    $rez = getAllArticles("tov");
+    for ($i = 0; $i < count($rez); $i++) {
+        if (stristr($rez[$i]["name"], $name) || stristr($rez[$i]["fulldescription"], $name)) {
+            $title = $rez[$i]["name"];
+            $img = $rez[$i]["image"];
+            $descr = $rez[$i]["description"];
+            $price = $rez[$i]["price"];
+            include "blocks/list_article.php";
+        }
+    }
 }
 
 ?>

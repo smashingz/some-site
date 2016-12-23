@@ -18,6 +18,6 @@ if (check_user($login, $password)) {
     $_SESSION["login"] = $login;
     $_SESSION["password"] = $password;
 }
-//} else $_SESSION["error_auth"] = 1;
+//else $_SESSION["error_auth"] = 1;
 header("Location: " . $_SERVER["HTTP_REFERER"]);
 exit;
