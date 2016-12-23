@@ -7,6 +7,5 @@
  */
 include_once "func.php";
 deleteElem($_POST["name"]);
-//print_r($_POST["name"]);
 header("Location: " . $_SERVER["HTTP_REFERER"]);
 ?>
