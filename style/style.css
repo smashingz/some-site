@@ -4,12 +4,10 @@ body {
 }
 
 .header {
-    background-color: #2f2f2f;
-    background-image: linear-gradient(to bottom, #2f2f2f, #000);
+    background: #2f2f2f linear-gradient(to bottom, #2f2f2f, #000);
     color: #545454;
     font: bold italic 16px Arial;
-    padding: 20px;
-    padding-left: 100px;
+    padding: 20px 20px 20px 100px;
     position: relative;
 }
 
@@ -24,8 +22,7 @@ body {
 }
 
 .menu table {
-    background-color: #fd9b00;
-    background-image: linear-gradient(to bottom, #f8bb49, #f7941d);
+    background: #fd9b00 linear-gradient(to bottom, #f8bb49, #f7941d);
 }
 
 .menu td {
@@ -40,8 +37,7 @@ body {
 }
 
 .menu td:hover {
-    background-color: #2f2f2f;
-    background-image: linear-gradient(to bottom, #2f2f2f, #000);
+    background: #2f2f2f linear-gradient(to bottom, #2f2f2f, #000);
     border-radius: 10px;
 }
 
@@ -84,22 +80,18 @@ body {
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
     width: 30%;
-    height: 200px;
-    margin-right: 5px;
 }
 
-.search select {
+.search select, .search input{
     padding: 10px;
-    width: 90%;
-    margin: 10px;
+    width: 80%;
+    margin: 8px;
 }
 
 .search h1 {
     margin: 0;
-    padding: 5px;
-    padding-left: 50px;
-    background-color: #333333;
-    background-image: linear-gradient(to bottom, #3f4246, #000);
+    padding: 5px 5px 5px 50px;
+    background: #333333 linear-gradient(to bottom, #3f4246, #000);
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
     color: #fd9b00;
@@ -112,13 +104,14 @@ body {
     left: 10px;
 }
 
-.search button {
-    margin: auto auto 10px 10px;
+.search input[type="submit"] {
+    width:30%;
     padding: 10px;
     border: 3px solid #d88119;
     background-image: linear-gradient(to top, #d88119, #f7941d);
     color: #fff;
     font: bold 14px Arial;
+
 }
 
 .search span {
@@ -162,64 +155,69 @@ body {
     font-style: italic;
 }
 
-.info {
-    margin-left: 32%;
-    width: 68%;
-}
+.offer {
+    position: relative;
+    left:33%;
+    margin-right: 33%;
 
-.tovar {
-    border-spacing: 0;
 }
-
-.headtov {
+.offer h1 {
     background-color: #f7941d;
+    background: #fd9b00 linear-gradient(to bottom, #f8bb49, #f7941d);
     border: 1px solid #d88119;
+    color:white;
+    font: bold 24px Arial;
+    margin:0 0 3px 0;
+    padding-left: 3px;
 }
-
-.headtov h1 {
-    color: white;
-    text-align: left;
-    margin: 3px;
-    font: bold 14px Arial;
-}
-
-.imgtov {
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-}
-
-.imgtov img {
-    height: 100px;
+.offer img {
+    height: 200px;
+    margin: 5px auto;
     display: block;
-    margin: 0 auto;
 }
-
-.tovopis {
+.offer .descr {
     background-color: #f7941d;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
-}
-
-.tovopis p {
     font: bold 11px Arial;
     color: #a16013;
     padding: 5px;
+    margin: 5px 0;
 }
-
-.cost {
-    margin: 10px;
+.offer .descr p {
+    margin: 0;
+}
+.offer .price {
+    margin: auto 10px auto auto;
     color: white;
     float: right;
     font-weight: bold;
+    font-size: 18px;
 }
-
+.comment h1 {
+    text-decoration: underline;
+    font-size:16px;
+}
+fieldset {
+    width:40%;
+}
+.reg {
+    margin: 3px 25%;
+    width:100%;
+}
 .bottom {
     border-top: 3px solid #cccccc;
     font: bold 11px Arial;
     color: #8d8d8d;
 }
-
-.bottom a {
-    font-style: italic;
-    color: #8d8d8d;
+.logged {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font: italic bold 14px Arial;
+    color:#f7941d;
+    text-align: right;
+}
+.logged * {
+    margin:3px;
 }
